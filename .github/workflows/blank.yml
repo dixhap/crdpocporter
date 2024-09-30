@@ -1,4 +1,4 @@
-name: Porter test Pipeline
+name: Porter cred test Pipeline
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  porter-bundle-Install:
-    runs-on: windows-latest
+  porter-cred-Install:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
