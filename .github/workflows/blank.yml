@@ -3,7 +3,7 @@ name: Porter test Pipeline
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   porter-bundle-Install:
@@ -23,7 +23,7 @@ jobs:
           docker pull docker/dockerfile-upstream:1.4.0
           porter build
           porter credentials apply github.json
-          
+          export GITHUB_TOKEN="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"
           porter install -c github.json
           porter installation show
      
