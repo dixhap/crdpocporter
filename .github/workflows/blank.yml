@@ -24,7 +24,7 @@ jobs:
           porter build
           porter credentials apply github.json
           export GITHUB_TOKEN="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"
-          porter install -c github.json
+          porter install -c github
           porter installation show
      
       
