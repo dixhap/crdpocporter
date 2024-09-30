@@ -1,4 +1,4 @@
-name: Porter Bundle Pipeline
+name: Porter cred test Pipeline
 
 on:
   push:
