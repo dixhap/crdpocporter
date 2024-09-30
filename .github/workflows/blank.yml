@@ -23,7 +23,7 @@ jobs:
           # docker pull docker/dockerfile-upstream:1.4.0
           # porter build
           porter credentials apply github.json
-          export GITHUB_TOKEN="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"
+          export GITHUB_TOKEN= ${{ secrets.TOKEN_GIT }}
           chmod +x ./helpers.sh
           porter install -c github
           porter installation show
