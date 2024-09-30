@@ -26,6 +26,7 @@ jobs:
           # porter build
           porter credentials apply github.json
           export GITHUB_TOKEN= $GITHUB_TOKEN
+          export GITHUB_USER = "dixhap"
           echo "hello" GITHUB_TOKEN: $GITHUB_TOKEN
           chmod +x ./helpers.sh
           porter install -c github

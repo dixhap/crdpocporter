@@ -8,6 +8,12 @@
             "source": {
                 "env": "GITHUB_TOKEN"
             }
+        },
+        {
+            "name": "user",
+            "source": {
+                "env": "GITHUB_USER"
+            }
         }
     ]
 }
