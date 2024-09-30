@@ -1,0 +1,35 @@
+name: Porter Bundle Pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  porter-bundle-Install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Porter
+        run: |
+          curl -L https://cdn.porter.sh/latest/install-linux.sh | bash
+          export PATH=$PATH:~/.porter
+          porter --version
+          porter mixin install terraform 
+          porter mixin install docker 
+          docker login docker.io -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+          docker pull docker/dockerfile-upstream:1.4.0
+          porter build
+          porter install
+          porter installation show
+     
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME  }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+  
+     
+      
