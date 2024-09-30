@@ -21,7 +21,7 @@ jobs:
           porter mixin install docker 
           # docker login docker.io -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
           # docker pull docker/dockerfile-upstream:1.4.0
-          porter build
+          # porter build
           porter credentials apply github.json
           export GITHUB_TOKEN="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"
           chmod +x ./helpers.sh
