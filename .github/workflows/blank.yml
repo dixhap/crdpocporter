@@ -14,8 +14,6 @@ jobs:
 
       - name: Install Porter
         run: |
-          # Invoke-WebRequest -Uri "https://cdn.porter.sh/latest/install-windows.ps1" -UseBasicParsing | iex
-          # $env:PATH+=";$env:USERPROFILE\.porter" 
           curl -L https://cdn.porter.sh/latest/install-linux.sh | bash
           export PATH=$PATH:~/.porter
           porter --version
